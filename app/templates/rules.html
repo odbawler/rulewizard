@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Rules</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+    <body>
+      <h1> Network rule wizard </h1>
+        <form>
+          <div class="window">
+            <div class="rules">
+              <pre><h4> Source           Destination      Port </h4></pre>
+              <pre> {{ sources[0] }}&nbsp;&nbsp;{{ dests[0] }}&nbsp;&nbsp;{{ ports[0] }} </pre>
+              <pre> {{ sources[1] }}&nbsp;&nbsp;{{ dests[1] }}&nbsp;&nbsp;{{ ports[1] }} </pre>
+              <pre> {{ sources[2] }}&nbsp;&nbsp;{{ dests[2] }}&nbsp;&nbsp;{{ ports[2] }} </pre>
+              <pre> {{ sources[3] }}&nbsp;&nbsp;{{ dests[3] }}&nbsp;&nbsp;{{ ports[3] }} </pre>
+              <pre> {{ sources[4] }}&nbsp;&nbsp;{{ dests[4] }}&nbsp;&nbsp;{{ ports[4] }} </pre>
+            </div>
+          </div>
+        </form>
+    </body>
+</html>

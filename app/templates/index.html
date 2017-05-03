@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Network Rules</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+    <body>
+        <h1>Network rule wizard</h1>
+        <form action="/rules">
+          <div class="home" align="center">
+            <table id="table">
+              <tbody>
+                <tr>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>Port</th>
+                </tr>
+                <tr>
+                  <td>{{ form.source(size=15) }}</td>
+                  <td>{{ form.destination(size=15) }}</td>
+                  <td>{{ form.port(size=15) }}</td>
+                </tr>
+                <tr>
+                  <td>{{ form.source2(size=15) }}</td>
+                  <td>{{ form.destination2(size=15) }}</td>
+                  <td>{{ form.port2(size=15) }}</td>
+                </tr>
+                <tr>
+                  <td>{{ form.source3(size=15) }}</td>
+                  <td>{{ form.destination3(size=15) }}</td>
+                  <td>{{ form.port3(size=15) }}</td>
+                </tr>
+                <tr>
+                  <td>{{ form.source4(size=15) }}</td>
+                  <td>{{ form.destination4(size=15) }}</td>
+                  <td>{{ form.port4(size=15) }}</td>
+                </tr>
+                <tr>
+                  <td>{{ form.source5(size=15) }}</td>
+                  <td>{{ form.destination5(size=15) }}</td>
+                  <td>{{ form.port5(size=15) }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="button">
+            <input type="submit" value="Get Rules">
+          </div>
+        </form>
+    </body>
+</html>
