@@ -14,39 +14,60 @@ def index():
 
 @app.route('/rules')
 def rules():
-    form = RuleForm()
-    source = request.args['source']
-    destination = request.args['destination']
-    port = request.args['port']
-    source2 = request.args['source2']
-    destination2 = request.args['destination2']
-    port2 = request.args['port2']
-    source3 = request.args['source3']
-    destination3 = request.args['destination3']
-    port3 = request.args['port3']
-    source4 = request.args['source4']
-    destination4 = request.args['destination4']
-    port4 = request.args['port4']
-    source5 = request.args['source5']
-    destination5 = request.args['destination5']
-    port5 = request.args['port5']
-    sourced = [source,source2,source3,source4,source5]
-    destd = [destination,destination2,destination3,destination4,destination5]
-    ports = [port,port2,port3,port4,port5]
-    sources =[]
-    dests=[]
-    for source in sourced:
-        count = len(source)
-        while count < 15:
-            source = source + " "
-            count += 1
-        sources.append(source)
-    for dest in destd:
-        count = len(dest)
-        while count < 15:
-            dest = dest + " "
-            count += 1
-        dests.append(dest)
+	form = RuleForm()
+	source = request.args.get('source')
+	destination = request.args.get('destination')
+	port = request.args.get('port')
+	source1 = request.args.get('source1')
+	destination1 = request.args.get('destination1')
+	port1 = request.args.get('port1')
+	source2 = request.args.get('source2')
+	destination2 = request.args.get('destination2')
+	port2 = request.args.get('port2')
+	source3 = request.args.get('source3')
+	destination3 = request.args.get('destination3')
+	port3 = request.args.get('port3')
+	source4 = request.args.get('source4')
+	destination4 = request.args.get('destination4')
+	port4 = request.args.get('port4')
+	source5 = request.args.get('source5')
+	destination5 = request.args.get('destination5')
+	port5 = request.args.get('port5')
+	source6 = request.args.get('source6')
+	destination6 = request.args.get('destination6')
+	port6 = request.args.get('port6')
+	sourced = [source,source1,source2,source3,source4,source5,source6]
+	destd = [destination,destination1,destination2,destination3,destination4,destination5,destination6]
+	portd = [port,port1,port2,port3,port4,port5,port6]
+	sources =[]
+	dests=[]
+	ports=[]
+	for source in sourced:
+		if source != None:
+			count = len(source)
+			while count < 15:
+				source = source + " "
+				count += 1
+			sources.append(source)
+		else:
+			source = ""
+			sources.append(source)
+	for dest in destd:
+		if dest != None:
+			count = len(dest)
+			while count < 15:
+				dest = dest + " "
+				count += 1
+			dests.append(dest)
+		else:
+			dest = ""
+			dests.append(dest)
+	for port in portd:
+		if port != None:
+			ports.append(port)
+		else:
+			port = ""
+			ports.append(port)
     #file2open = destination + ".txt"
     #f = open(file2open, "r")
     #text =[]
@@ -55,8 +76,8 @@ def rules():
     #    if not line:break
     #    text.append(line)
     #f.close()
-    return render_template('rules.html',
-                            form=form,
-                            sources=sources,
-                            dests=dests,
-                            ports=ports)
+	return render_template('rules.html',
+							form=form,
+							sources=sources,
+							dests=dests,
+							ports=ports)

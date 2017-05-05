@@ -2,12 +2,40 @@
     <head>
         <title>Network Rules</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+		<script type="text/javascript">
+		var index = 1;
+		    function insertRow() 
+			{
+				var table = document.getElementById("parameters");
+				var row=table.insertRow(table.rows.length);
+				var cell1=row.insertCell(0);
+				var t1=document.createElement("input");
+					t1.size = 15;
+					t1.type = "text"
+					t1.name = "source"+index;
+					cell1.appendChild(t1);
+				var cell2=row.insertCell(1);
+				var t2=document.createElement("input");
+					t2.size = 15;
+					t2.type = "text"
+					t2.name = "destination"+index;
+					cell2.appendChild(t2);
+				var cell3=row.insertCell(2);
+				var t3=document.createElement("input");
+					t3.size = 15;
+					t3.type = "text"
+					t3.name = "port"+index;
+					cell3.appendChild(t3);
+			index++;
+				
+			}
+		</script>
     </head>
     <body>
-        <h1>Network rule wizard</h1>
+        <h1>Network rules</h1>
         <form action="/rules">
           <div class="home" align="center">
-            <table id="table">
+            <table id ="parameters">
               <tbody>
                 <tr>
                   <th>Source</th>
@@ -15,33 +43,15 @@
                   <th>Port</th>
                 </tr>
                 <tr>
-                  <td>{{ form.source(size=15) }}</td>
-                  <td>{{ form.destination(size=15) }}</td>
-                  <td>{{ form.port(size=15) }}</td>
-                </tr>
-                <tr>
-                  <td>{{ form.source2(size=15) }}</td>
-                  <td>{{ form.destination2(size=15) }}</td>
-                  <td>{{ form.port2(size=15) }}</td>
-                </tr>
-                <tr>
-                  <td>{{ form.source3(size=15) }}</td>
-                  <td>{{ form.destination3(size=15) }}</td>
-                  <td>{{ form.port3(size=15) }}</td>
-                </tr>
-                <tr>
-                  <td>{{ form.source4(size=15) }}</td>
-                  <td>{{ form.destination4(size=15) }}</td>
-                  <td>{{ form.port4(size=15) }}</td>
-                </tr>
-                <tr>
-                  <td>{{ form.source5(size=15) }}</td>
-                  <td>{{ form.destination5(size=15) }}</td>
-                  <td>{{ form.port5(size=15) }}</td>
+                  <td><input size=15 type="text" name="source"/></td>
+                  <td><input size=15 type="text" name="destination"/></td>
+                  <td><input size=15 type="text" name="port"/></td>
                 </tr>
               </tbody>
             </table>
+			<input type="button" class="button" value="Add row" onclick="insertRow();">
           </div>
+
           <div class="button">
             <input type="submit" value="Get Rules">
           </div>

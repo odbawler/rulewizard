@@ -50,11 +50,11 @@ input[type=submit]{
 select[class=drop]{
     overflow: hidden;
 }
-table[id=table]{
-    border-spacing: 5px;
+table[class=parameters]{
+    border-spacing: 4px;
 }
 th, td {
-    padding: 25px;
+    padding: 10px;
     border: 0.5px solid black;
-    width: 250px;
+    width: 200px;
 }
