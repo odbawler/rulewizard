@@ -3,7 +3,6 @@
         <title>Network Rules</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 		<script type="text/javascript">
-		var index = 1;
 		    function insertRow() 
 			{
 				var table = document.getElementById("parameters");
@@ -12,19 +11,19 @@
 				var t1=document.createElement("input");
 					t1.size = 15;
 					t1.type = "text"
-					t1.name = "source"+index;
+					t1.name = "source"
 					cell1.appendChild(t1);
 				var cell2=row.insertCell(1);
 				var t2=document.createElement("input");
 					t2.size = 15;
 					t2.type = "text"
-					t2.name = "destination"+index;
+					t2.name = "destination"
 					cell2.appendChild(t2);
 				var cell3=row.insertCell(2);
 				var t3=document.createElement("input");
 					t3.size = 15;
 					t3.type = "text"
-					t3.name = "port"+index;
+					t3.name = "port"
 					cell3.appendChild(t3);
 			index++;
 				
